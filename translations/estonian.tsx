@@ -16,7 +16,7 @@ export const estonianDictionary: Dictionary = {
     'title2': ['Õpi lahendada' ,"Ruubiku kuubikut"],
     'subtitle2': ["Professionaalsed Ruubiku kuubiku tunnid"],
     'category1Title': ['Gruppi tunnid', 'Ettevõtete jaoks'],
-    'category2Title': ['Isiklikud', 'Tunnid'],
+    'category2Title': ['Individuaalsed', 'Tunnid'],
     '1hLesson': "Tunni kestvus: <strong>1t</strong>",
     'anyDuration': "Tunni kestvus: <strong>1-3t</strong>",
     "personOrOnline": "<strong>Personaalselt</strong> või <strong>Online</strong>",
@@ -37,7 +37,7 @@ export const estonianDictionary: Dictionary = {
     'social': "Sotsiaalmeedia",
     'about': "Minust",
     "cube": "Ruubiku kuubik",
-    "privateLessons": "Personaalsed Tunnid",
+    "privateLessons": "Individuaalsed tunnid",
     "contact": "Kontakt"
 }
 export const estPageLink = () => {
