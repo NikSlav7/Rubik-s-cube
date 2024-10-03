@@ -15,6 +15,7 @@ import { englishDictionary, engPageLink } from "@/translations/english";
 import React from "react";
 import { estonianDictionary, estPageLink } from "@/translations/estonian";
 import { rusPageLink, russianDictionary } from "@/translations/russian";
+import { cn } from "@/lib/utils";
 export default function Home() {
 
   interface Link{
@@ -116,7 +117,7 @@ export default function Home() {
       </div>
       <div className="bg-white">
         <Container className="py-[60px] md:py-[80px]">
-            <Title id="lesson" size={bigScreen ? "4xl" : "3xl"} className="px-6 leading-[46px] md:!leading-[62px] font-[600]" text={dictionary['title3']}/>
+            <Title id="lesson" size={bigScreen ? "4xl" : "3xl"} className={cn("px-6 leading-[46px] md:!leading-[62px] font-[600]", lang === 'rus' && 'text-[30px]')} text={dictionary['title3']}/>
             <Title text={dictionary['subtitle3']} size="xl" className="text-black pb-[22px] px-[28px] md:px-0 md:w-[30%] font-[300] mt-6"/>
             <Calender />
         </Container>
