@@ -44,7 +44,7 @@ export const Slideshow: React.FC<Props> = ({className, images}) => {
 
     return <div className="overflow-hidden ">
         <div id="slideshow" className={cn(className, "px-3 md:px-0 h-[500px] md:h-[650px] w-[max-content] md:my-5 flex gap-[20px] overflow-x-hidden md:overflow-visible slideshow-animation")}>
-            {images.map((image) => <div className="flex flex-col">
+            {images.map((image, ind) => <div key={ind} className="flex flex-col">
                 <div><Image unoptimized={true} alt={image.subtitle}  className="object-contain h-[450px] md:h-[600px] w-auto" src={image.url}></Image></div>
                 <p className="mt-3 text-sm md:text-md font-bold text-gray-600">{image.subtitle}</p>
             </div>)}

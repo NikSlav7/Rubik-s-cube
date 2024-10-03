@@ -29,7 +29,7 @@ export const ContactElement: React.FC<Props> = ({className, name, value, icons})
     return <div className="py-4 text-center text-xl text-white" ref={intersectionRef}>
         <p className="text-green-600">{name}</p>
         {value && <p className="font-bold">{value}</p>}
-        {icons && <div className="my-5 gap-5 flex items-center justify-center">{icons.map((icon) => <a href={icon.redirectUrl}><Image width={32} height={32} src={icon.imageSrc} alt="image"></Image></a>)
+        {icons && <div className="my-5 gap-5 flex items-center justify-center">{icons.map((icon, ind) => <a key={ind} href={icon.redirectUrl}><Image width={32} height={32} src={icon.imageSrc} alt="image"></Image></a>)
         }</div>}
     </div>
 }

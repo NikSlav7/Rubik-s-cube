@@ -16,7 +16,8 @@ interface Props{
     pictureAllignment: PictureAllignment,
     title: string[],
     text: Node,
-    url: string
+    url: string,
+    key: string
 }
 
 export const PictureGridElement: React.FC<Props> = ({className, pictureAllignment, title, text, url}) => {

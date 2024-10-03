@@ -85,11 +85,11 @@ export default function Home() {
               <p className="mb-2 font-thin text-lg text-white slide-in-down">Nikita Slavinski</p>
             </div>
             {<div className="md:ml-5 flex gap-8 justify-center items-end my-[15px] md:my-0 md:px-[16px] w-[100%] md:w-auto slide-in-left">
-              {languageLinks.map((link) => <a className="text-black md:mb-2 text-sm lg:text-md font-thin" href={link.link}>{link.title}</a>)}
+              {languageLinks.map((link, ind) => <a key={ind} className="text-black md:mb-2 text-sm lg:text-md font-thin" href={link.link}>{link.title}</a>)}
              </div>}
           </div>
           {window.innerWidth >= 768 && <div className="flex gap-8 items-end px-[8px] slide-in-left">
-            {links.map((link) => <a className="text-black mb-2 text-md font-thin" href={link.link}>{link.title}</a>)}
+            {links.map((link, ind) => <a key={ind} className="text-black mb-2 text-md font-thin" href={link.link}>{link.title}</a>)}
           </div>}
         </div>
         <Slideshow images={images}/>
@@ -99,7 +99,7 @@ export default function Home() {
           <Title id="me" text={dictionary['title1']} size={bigScreen ? "4xl" : "3xl"} className="px-6 leading-[46px] md:!leading-[62px] text-white font-[600]"/>
           <Title  text={dictionary['subtitle1']} size="xl" className="text-white font-[300] mt-2"/>
           <div  className="my-[70px] px-10 min-h-[min-content] grid grid-cols-1 gap-16 grid-rows-3">
-            {imageUrls.map((element, ind) => <PictureGridElement url={element} title={dictionary['section' + (ind+1) + 'Title']}
+            {imageUrls.map((element, ind) => <PictureGridElement key={ind.toString()} url={element} title={dictionary['section' + (ind+1) + 'Title']}
              text={dictionary['section' + (ind+1) + 'Text']} pictureAllignment={(ind+1) % 2 === 0 ? 'right' : 'left'}/>)}
           </div>
         </Container>
@@ -110,7 +110,7 @@ export default function Home() {
           <Title id="cube" animate={false} size={bigScreen ? "4xl" : "3xl"} className="px-6 leading-[46px] md:!leading-[62px] font-[600]" text={dictionary.title2}/>
           <Title animate={false} text={dictionary.subtitle2} size="xl" className="text-black font-[300] mt-2"/>
           <div className="mt-[50px] ] mx-[15px] md:mx-[0px] flex flex-wrap justify-center gap-10">
-            {lessonType.map((element) => <LessonType imageSrc={element.imageSrc} title={element.title}
+            {lessonType.map((element, ind) => <LessonType key={ind.toString()} imageSrc={element.imageSrc} title={element.title}
               includedItems={element.includedItems} price={element.price} disclaimer={element.disclaimer}/>)}
           </div>
         </Container>
@@ -127,9 +127,9 @@ export default function Home() {
             <Title id="contact" size={bigScreen ? "4xl" : "3xl"} className="px-6 !leading-[46px] text-white font-[600]" text={dictionary['title4']}/>
             <Title text={dictionary['subtitle4']} size="xl" className="text-white px-[28px] md:px-0   md:w-[30%] font-[300] mt-6"/>
             <Image src={require('../images/rubiks.png')} alt='pic' className="mx-auto my-[45px] w-[86%] aspect-square  md:w-[360px] md:h-[360px] rounded-2xl object-cover"></Image>
-            <ContactElement name={dictionary['email']} value="nikslav7@gmail.com" />
-            <ContactElement name={dictionary['phone']} value="+372 5699 6110" />
-            <ContactElement name={dictionary['social']} icons={[{'imageSrc': require('../images/intsalogo.png'), 'redirectUrl': 'https://www.instagram.com/n_slav/'}, 
+            <ContactElement key={"email"} name={dictionary['email']} value="nikslav7@gmail.com" />
+            <ContactElement key={"phone"} name={dictionary['phone']} value="+372 5699 6110" />
+            <ContactElement key={"social"} name={dictionary['social']} icons={[{'imageSrc': require('../images/intsalogo.png'), 'redirectUrl': 'https://www.instagram.com/n_slav/'}, 
               {'imageSrc': require('../images/facebook.png'), 'redirectUrl': 'https://www.facebook.com/nik.slav.58/'},
               {'imageSrc': require('../images/youtube.png'), 'redirectUrl': 'https://www.youtube.com/@nikitaslavinski6861'}
             ]}/>

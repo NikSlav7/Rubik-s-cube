@@ -12,7 +12,7 @@ interface Props{
     size: Size,
     text: string[],
     animate?: boolean,
-    id? : string
+    id? : string,
 }
 
 export const Title: React.FC<Props> = ({className, size, text, animate = true, id}) => {
@@ -43,6 +43,7 @@ export const Title: React.FC<Props> = ({className, size, text, animate = true, i
     
 
     return <div id={id} className={cn("w-[100%] flex justify-center")}>
-        <p ref={intersectioneRef} className={cn('text-center w-[100%] leading-3', animate ? 'opacity-0' : '' ,textSizeChart[size], className)}>{text.map((part) => <>{part}<br></br></>)}</p>
+        <p ref={intersectioneRef} className={cn('text-center w-[100%] leading-3', animate ? 'opacity-0' : '' ,textSizeChart[size], className)}>{text.map((part, ind) => <span
+         key={ind}>{part}<br></br></span>)}</p>
     </div>
 }
