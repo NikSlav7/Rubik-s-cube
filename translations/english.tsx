@@ -1,5 +1,45 @@
 
-export const englishDictionary = {
+export interface Dictionary{
+    slide1Subtitle: string;
+    slide2Subtitle: string;
+    slide3Subtitle: string;
+    title1: string[];
+    subtitle1: string[];
+    section1Title: string[];
+    section1Text: string;
+    section2Title: string[];
+    section2Text: string;
+    section3Title: string[];
+    section3Text: string;
+    title2: string[];
+    subtitle2: string[];
+    category1Title: string[];
+    category2Title: string[];
+    '1hLesson': string;
+    anyDuration: string;
+    personOrOnline: string;
+    inPerson: string;
+    '24hContact': string;
+    personalFeedback: string;
+    questions: string;
+    teamBuilding: string;
+    groupSize: string;
+    disclaimerPersonal: string;
+    disclaimerTeam: string;
+    title3: string[];
+    subtitle3: string[];
+    title4: string[];
+    subtitle4: string[];
+    email: string;
+    phone: string;
+    social: string;
+    about: string;
+    cube: string;
+    privateLessons: string;
+    contact: string;
+  };
+  
+export const englishDictionary:Dictionary= {
     'slide1Subtitle': 'Estonian Championship',
     'slide2Subtitle': 'Finnish Championship',
     'slide3Subtitle': 'Swedish Championship',

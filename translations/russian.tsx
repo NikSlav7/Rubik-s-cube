@@ -1,6 +1,7 @@
+import { Dictionary } from "./english";
 
 
-export const russianDictionary = {
+export const russianDictionary: Dictionary = {
     'slide1Subtitle': 'Чемпионат Эстонии',
     'slide2Subtitle': 'Чемпионат Финляндии',
     'slide3Subtitle': 'Чемпионат Швеции',

@@ -15,6 +15,7 @@ import { englishDictionary, engPageLink } from "@/translations/english";
 import React from "react";
 import { estonianDictionary, estPageLink } from "@/translations/estonian";
 import { rusPageLink, russianDictionary } from "@/translations/russian";
+import { Dictionary } from "@/translations/english";
 import { cn } from "@/lib/utils";
 export default function Home() {
 
@@ -31,14 +32,24 @@ export default function Home() {
     disclaimer: string,
     title: string[]
 }
+  interface dictionaryList {
+    "eng": Dictionary,
+    "est": Dictionary,
+    "rus": Dictionary
+  }
 
 
 
   const [bigScreen, setBigScreen] = React.useState(window.innerWidth >=768);
   const params = useSearchParams();
-  let dictionaries = {'eng': englishDictionary, 'est': estonianDictionary, 'rus': russianDictionary}
+  let dictionaries:dictionaryList = {'eng': englishDictionary, 'est': estonianDictionary, 'rus': russianDictionary}
   let lang = params.get('lang')
-  let dictionary = lang ? dictionaries[lang] : englishDictionary;
+  function detectLang(){
+    if (lang === 'rus') return dictionaries.rus
+    else if (lang === 'est') return dictionaries.est
+    return dictionaries.eng;
+  }
+  let dictionary = lang ?  detectLang() : englishDictionary;
 
 
 

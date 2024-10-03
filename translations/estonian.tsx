@@ -1,4 +1,6 @@
-export const estonianDictionary = {
+import { Dictionary } from "./english";
+
+export const estonianDictionary: Dictionary = {
     'slide1Subtitle': 'Eesti Meistrivõistlused',
     'slide2Subtitle': 'Soome Meistrivõistlused',
     'slide3Subtitle': 'Rootsi Meistrivõistlused',
