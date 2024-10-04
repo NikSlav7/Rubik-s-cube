@@ -69,12 +69,12 @@ export default function Home() {
 
   let lessonType: LessonType[] = [
     {imageSrc: require("./images/peopleicon.png"), disclaimer:dictionary['disclaimerTeam'],
-      price: "from 20$", title: dictionary['category1Title'], includedItems: [dictionary['anyDuration'],
+      price: "from 20€", title: dictionary['category1Title'], includedItems: [dictionary['anyDuration'],
       dictionary['inPerson'], dictionary['groupSize'], dictionary['personalFeedback'],
       dictionary['questions']]
     },
     {imageSrc: require("./images/peopleicon.png"), disclaimer:dictionary['disclaimerPersonal'],
-    price: "15$", title: dictionary['category2Title'], includedItems: [dictionary['1hLesson'],
+    price: "15€", title: dictionary['category2Title'], includedItems: [dictionary['1hLesson'],
     dictionary['personOrOnline'], dictionary['24hContact'], dictionary['personalFeedback'],
     dictionary['questions']]
   }]
@@ -88,7 +88,6 @@ export default function Home() {
 
   return (
     <>
-    <Suspense>
       <Container className="flex flex-col overflow-x-hidden">
         <div className="md:h-[100px] px-[42px] flex flex-col md:flex-row justify-between">
           <div className="flex flex-col justify-center md:flex-row">
@@ -147,7 +146,6 @@ export default function Home() {
             
         </Container>
       </div>
-      </Suspense>
     </>
   );
 }
