@@ -1,15 +1,14 @@
-
 'use client'
-import { Container } from "@/components/ui/Container";
-import { PictureGridElement } from "@/components/ui/PictureGridElement";
-import { ImageSlide, Slideshow } from "@/components/ui/Slideshow";
-import { Title } from "@/components/ui/Title";
+import { Container } from "@/app/ui/Container";
+import { PictureGridElement } from "@/app/ui/PictureGridElement";
+import { ImageSlide, Slideshow } from "@/app/ui/Slideshow";
+import { Title } from "@/app/ui/Title";
 import { request } from "http";
 import Image from "next/image";
 import '../css/animations.css'
-import { LessonType } from "@/components/ui/LessonType";
-import { Calender } from "@/components/ui/Calender";
-import {ContactElement} from '@/components/ui/ContactElement'
+import { LessonType } from "@/app/ui/LessonType";
+import { Calender } from "@/app/ui/Calender";
+import {ContactElement} from '@/app/ui/ContactElement'
 import { useSearchParams } from "next/navigation";
 import { englishDictionary, engPageLink } from "@/translations/english";
 import React from "react";
@@ -17,7 +16,6 @@ import { estonianDictionary, estPageLink } from "@/translations/estonian";
 import { rusPageLink, russianDictionary } from "@/translations/russian";
 import { Dictionary } from "@/translations/english";
 import { cn } from "@/lib/utils";
-import { Node } from "postcss";
 export default function Home() {
 
   interface Link{
@@ -41,7 +39,7 @@ export default function Home() {
 
 
 
-  const [bigScreen, setBigScreen] = React.useState(window.innerWidth >=768);
+  const [bigScreen, setBigScreen] = React.useState(window !== undefined && window.innerWidth >=768);
   const params = useSearchParams();
   let dictionaries:dictionaryList = {'eng': englishDictionary, 'est': estonianDictionary, 'rus': russianDictionary}
   let lang = params.get('lang')
