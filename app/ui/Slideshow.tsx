@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import Image from "next/image";
-import '../../css/animations.css'
+import '../css/animations.css'
 
 
 export interface ImageSlide{

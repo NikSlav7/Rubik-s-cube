@@ -2,7 +2,7 @@
 import Image from "next/image"
 import React from "react"
 import { useIntersection } from "react-use"
-import '../../css/animations.css'
+import '../css/animations.css'
 
 
 interface Icon{

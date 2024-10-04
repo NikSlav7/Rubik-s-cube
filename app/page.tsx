@@ -5,13 +5,13 @@ import { ImageSlide, Slideshow } from "@/app/ui/Slideshow";
 import { Title } from "@/app/ui/Title";
 import { request } from "http";
 import Image from "next/image";
-import '../css/animations.css'
+import './css/animations.css'
 import { LessonType } from "@/app/ui/LessonType";
 import { Calender } from "@/app/ui/Calender";
 import {ContactElement} from '@/app/ui/ContactElement'
 import { useSearchParams } from "next/navigation";
 import { englishDictionary, engPageLink } from "@/translations/english";
-import React from "react";
+import React, { Suspense } from "react";
 import { estonianDictionary, estPageLink } from "@/translations/estonian";
 import { rusPageLink, russianDictionary } from "@/translations/russian";
 import { Dictionary } from "@/translations/english";
@@ -39,7 +39,7 @@ export default function Home() {
 
 
 
-  const [bigScreen, setBigScreen] = React.useState(window !== undefined && window.innerWidth >=768);
+  const [bigScreen, setBigScreen] = React.useState(typeof window !== 'undefined' && window.innerWidth >=768);
   const params = useSearchParams();
   let dictionaries:dictionaryList = {'eng': englishDictionary, 'est': estonianDictionary, 'rus': russianDictionary}
   let lang = params.get('lang')
@@ -54,9 +54,9 @@ export default function Home() {
 
   let links: Link[] = [{title: dictionary['about'], link: "#me"}, {title: dictionary['cube'], link: "#cube"},{title: dictionary['privateLessons'], link: "#lesson"}
   ,{title: dictionary['contact'], link: "#contact"}]
-  let images: ImageSlide[] = [{url: require("../images/rubiks.png"), subtitle: dictionary['slide1Subtitle']},
-    {url: require("../images/rubiksvideo.gif"), subtitle:dictionary['slide2Subtitle']},
-    {url: require("../images/rubiksvideo2.gif"), subtitle: dictionary['slide3Subtitle']}
+  let images: ImageSlide[] = [{url: require("./images/rubiks.png"), subtitle: dictionary['slide1Subtitle']},
+    {url: require("./images/rubiksvideo.gif"), subtitle:dictionary['slide2Subtitle']},
+    {url: require("./images/rubiksvideo2.gif"), subtitle: dictionary['slide3Subtitle']}
 
    ]
 
@@ -65,15 +65,15 @@ export default function Home() {
     {title: 'Русский', link: rusPageLink().toString()}]
 
   
-  let imageUrls = [require('../images/early-cube.jpg'), require("../images/mark-photo.jpg"), require("../images/poland-cube.jpg")]
+  let imageUrls = [require('./images/early-cube.jpg'), require("./images/mark-photo.jpg"), require("./images/poland-cube.jpg")]
 
   let lessonType: LessonType[] = [
-    {imageSrc: require("../images/peopleicon.png"), disclaimer:dictionary['disclaimerTeam'],
+    {imageSrc: require("./images/peopleicon.png"), disclaimer:dictionary['disclaimerTeam'],
       price: "from 20$", title: dictionary['category1Title'], includedItems: [dictionary['anyDuration'],
       dictionary['inPerson'], dictionary['groupSize'], dictionary['personalFeedback'],
       dictionary['questions']]
     },
-    {imageSrc: require("../images/peopleicon.png"), disclaimer:dictionary['disclaimerPersonal'],
+    {imageSrc: require("./images/peopleicon.png"), disclaimer:dictionary['disclaimerPersonal'],
     price: "15$", title: dictionary['category2Title'], includedItems: [dictionary['1hLesson'],
     dictionary['personOrOnline'], dictionary['24hContact'], dictionary['personalFeedback'],
     dictionary['questions']]
@@ -88,6 +88,7 @@ export default function Home() {
 
   return (
     <>
+    <Suspense>
       <Container className="flex flex-col overflow-x-hidden">
         <div className="md:h-[100px] px-[42px] flex flex-col md:flex-row justify-between">
           <div className="flex flex-col justify-center md:flex-row">
@@ -98,7 +99,7 @@ export default function Home() {
               {languageLinks.map((link, ind) => <a key={ind} className="text-black md:mb-2 text-sm lg:text-md font-thin" href={link.link}>{link.title}</a>)}
              </div>}
           </div>
-          {window.innerWidth >= 768 && <div className="flex gap-8 items-end px-[8px] slide-in-left">
+          {bigScreen && <div className="flex gap-8 items-end px-[8px] slide-in-left">
             {links.map((link, ind) => <a key={ind} className="text-black mb-2 text-md font-thin" href={link.link}>{link.title}</a>)}
           </div>}
         </div>
@@ -136,16 +137,17 @@ export default function Home() {
       <Container className=" py-[70px]">
             <Title id="contact" size={bigScreen ? "4xl" : "3xl"} className="px-6 !leading-[46px] text-white font-[600]" text={dictionary['title4']}/>
             <Title text={dictionary['subtitle4']} size="xl" className="text-white px-[28px] md:px-0   md:w-[30%] font-[300] mt-6"/>
-            <Image src={require('../images/rubiks.png')} alt='pic' className="mx-auto my-[45px] w-[86%] aspect-square  md:w-[360px] md:h-[360px] rounded-2xl object-cover"></Image>
+            <Image src={require('./images/rubiks.png')} alt='pic' className="mx-auto my-[45px] w-[86%] aspect-square  md:w-[360px] md:h-[360px] rounded-2xl object-cover"></Image>
             <ContactElement key={"email"} name={dictionary['email']} value="nikslav7@gmail.com" />
             <ContactElement key={"phone"} name={dictionary['phone']} value="+372 5699 6110" />
-            <ContactElement key={"social"} name={dictionary['social']} icons={[{'imageSrc': require('../images/intsalogo.png'), 'redirectUrl': 'https://www.instagram.com/n_slav/'}, 
-              {'imageSrc': require('../images/facebook.png'), 'redirectUrl': 'https://www.facebook.com/nik.slav.58/'},
-              {'imageSrc': require('../images/youtube.png'), 'redirectUrl': 'https://www.youtube.com/@nikitaslavinski6861'}
+            <ContactElement key={"social"} name={dictionary['social']} icons={[{'imageSrc': require('./images/intsalogo.png'), 'redirectUrl': 'https://www.instagram.com/n_slav/'}, 
+              {'imageSrc': require('./images/facebook.png'), 'redirectUrl': 'https://www.facebook.com/nik.slav.58/'},
+              {'imageSrc': require('./images/youtube.png'), 'redirectUrl': 'https://www.youtube.com/@nikitaslavinski6861'}
             ]}/>
             
         </Container>
       </div>
+      </Suspense>
     </>
   );
 }

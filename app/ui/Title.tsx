@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { useIntersection } from "react-use";
-import '../../css/animations.css'
+import '../css/animations.css'
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl'
 
@@ -25,7 +25,7 @@ export const Title: React.FC<Props> = ({className, size, text, animate = true, i
         if (intersection?.isIntersecting  && animate){
             intersectioneRef.current?.classList.add('slide-in-right');
         }
-    }, [intersection?.isIntersecting]);
+    }, [intersection?.isIntersecting, animate]);
 
     let textSizeChart = {
         'xs': 'font-xs',

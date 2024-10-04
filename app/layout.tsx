@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <body className={cn(lato.className, 'w-[100vw]')}>{children}</body>
+       <body className={cn(lato.className, 'w-[100vw]')}><Suspense>{children}</Suspense></body>
     </html>
   );
 }
