@@ -17,6 +17,7 @@ import { estonianDictionary, estPageLink } from "@/translations/estonian";
 import { rusPageLink, russianDictionary } from "@/translations/russian";
 import { Dictionary } from "@/translations/english";
 import { cn } from "@/lib/utils";
+import { Node } from "postcss";
 export default function Home() {
 
   interface Link{
@@ -110,8 +111,8 @@ export default function Home() {
           <Title id="me" text={dictionary['title1']} size={bigScreen ? "4xl" : "3xl"} className="px-6 leading-[46px] md:!leading-[62px] text-white font-[600]"/>
           <Title  text={dictionary['subtitle1']} size="xl" className="text-white font-[300] mt-2"/>
           <div  className="my-[70px] px-10 min-h-[min-content] grid grid-cols-1 gap-16 grid-rows-3">
-            {imageUrls.map((element, ind) => <PictureGridElement key={ind.toString()} url={element} title={dictionary['section' + (ind+1) + 'Title']}
-             text={dictionary['section' + (ind+1) + 'Text']} pictureAllignment={(ind+1) % 2 === 0 ? 'right' : 'left'}/>)}
+            {imageUrls.map((element, ind) => <PictureGridElement key={ind.toString()} url={element} title={dictionary['section' + (ind+1) + 'Title' as keyof Dictionary] as string[]}
+             text={dictionary['section' + (ind+1) + 'Text' as keyof Dictionary] as string} pictureAllignment={(ind+1) % 2 === 0 ? 'right' : 'left'}/>)}
           </div>
         </Container>
         

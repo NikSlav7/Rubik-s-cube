@@ -15,7 +15,7 @@ interface Props{
     className? :string
     pictureAllignment: PictureAllignment,
     title: string[],
-    text: Node,
+    text: string,
     url: string,
     key: string
 }
@@ -23,9 +23,9 @@ interface Props{
 export const PictureGridElement: React.FC<Props> = ({className, pictureAllignment, title, text, url}) => {
 
 
-    const intersectioneRef = React.useRef(null);
+    const intersectioneRef = React.useRef<any>(null);
     const intersection = useIntersection(intersectioneRef, {threshold: 0.1})
-    const containerRef = React.useRef(null);
+    const containerRef = React.useRef<any>(null);
 
     function getTextAllignment(){
         if (window.innerWidth >= 768) {

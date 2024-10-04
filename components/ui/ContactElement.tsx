@@ -19,11 +19,11 @@ interface Props{
 
 export const ContactElement: React.FC<Props> = ({className, name, value, icons}) => {
 
-    const intersectionRef = React.useRef(null);
+    const intersectionRef = React.useRef<any>(null);
     const intersection = useIntersection(intersectionRef, {threshold: 0.1})
 
     React.useEffect(()=>{
-        if (intersection?.isIntersecting) intersectionRef.current.classList.add('slide-in-up')
+        if (intersection?.isIntersecting) intersectionRef.current?.classList.add('slide-in-up')
     },[intersection?.isIntersecting])
 
     return <div className="py-4 text-center text-xl text-white" ref={intersectionRef}>

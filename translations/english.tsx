@@ -1,5 +1,5 @@
 
-export interface Dictionary{
+export interface Dictionary {
     slide1Subtitle: string;
     slide2Subtitle: string;
     slide3Subtitle: string;

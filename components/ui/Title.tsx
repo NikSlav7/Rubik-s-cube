@@ -18,12 +18,12 @@ interface Props{
 export const Title: React.FC<Props> = ({className, size, text, animate = true, id}) => {
 
 
-    const intersectioneRef = React.useRef(null)
+    const intersectioneRef = React.useRef<any>(null)
     const intersection = useIntersection(intersectioneRef, {threshold: 0.1})
 
     React.useEffect(()=>{
         if (intersection?.isIntersecting  && animate){
-            intersectioneRef.current.classList.add('slide-in-right');
+            intersectioneRef.current?.classList.add('slide-in-right');
         }
     }, [intersection?.isIntersecting]);
 
