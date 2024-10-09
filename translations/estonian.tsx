@@ -9,7 +9,7 @@ export const estonianDictionary: Dictionary = {
      'section1Title': ['Alustades varakult'],
     'section1Text': "Mina alustasin oma Rubiku kuubiku teekonda varakult ja sellest ajast peale on see olnud minu elu väga oluline osa. Noorelt alustamine võimaldas mul sukelduda sügavale kuubikumaailma, lihvides oma oskusi ja rajades tugeva aluse. See varajane algus mitte ainult ei hajutanud mu kirge, vaid andis mulle ka enesekindlust võistelda, õpetada ja jagada oma armastust kuubi vastu teistega.",
     'section2Title': ['Külastades', 'terve Maailma'],
-    'section2Text':"Vaid kuueaastase professionaalse karjääri jooksul osalesin ma rohkem kui 35 võistlusel üle kogu maailma. Need meeldejäävad seiklused mitte ainult tugevdasid mu kirge Ruubiku kuubiku vastu, vaid andsid mulle võimaluse tutvuda paljude huvitavate inimestega ning külastada erinevaid põnevaid kohti"
+    'section2Text':"Vaid kuueaastase professionaalse karjääri jooksul osalesin ma rohkem kui 35 võistlusel üle kogu maailma. Need meeldejäävad seiklused mitte ainult tugevdasid mu kirge Ruubiku kuubiku vastu, vaid andsid mulle võimaluse tutvuda paljude huvitavate inimestega ning külastada erinevaid põnevaid kohti."
 ,
     'section3Title': ['Kohtudes uusi inimesi'],
     'section3Text': "Ruubiku kuubik tutvustas mind väga huvitava ja mitmekesise seltskonnaga, kus on palju suurepäraseid tarku inimesi erinevatest maailmajagudest. Nii võistlustel kui ka kohalikel kokkusaamistel suutsin ma leida mitte ainult meeldejäävaid elamusi, kuid ka inimesi, kellest on saanud mu elu parimad sõbrad",
@@ -28,7 +28,7 @@ export const estonianDictionary: Dictionary = {
     'groupSize': "<strong>2-10</strong> inimest gruppis",
     'disclaimerPersonal': "Tundide arv sõltub Ruubiku kuubikust",
     'disclaimerTeam': "Tundide arv sõltub Ruubiku kuubikust ja gruppi suurusest",
-    'title3': ["Broneeri tundi", "Professionaaliga"],
+    'title3': ["Broneerige tundi", "Professionaaliga"],
     "subtitle3": ["Broneerige 15-minutilist tasuta kõnet, kus te saate küsida kõiki olulisi küsimusi ning planeerida tunniplaani ette"],
     'title4': ['Võtke ühendust','igal ajal'],
     "subtitle4": ["Saate alati vabalt võtta minuga ühendust ning küsida kõiki teid huvitavaid küsimusi"],
